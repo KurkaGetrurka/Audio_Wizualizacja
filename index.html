@@ -11,8 +11,22 @@
       <div class="label">
         <span>Nebula audio sketch</span>
       </div>
-      <div class="controls">
-        <button id="audio-toggle" type="button">Play</button>
+      <div class="player" aria-label="Odtwarzacz muzyki">
+        <div class="track-info">
+          <span class="track-kicker">Teraz gra</span>
+          <strong id="track-title">Mnihimo's Journey</strong>
+        </div>
+        <select id="track-select" aria-label="Wybierz utwór"></select>
+        <div class="transport">
+          <button id="previous-track" type="button" aria-label="Poprzedni utwór">Wstecz</button>
+          <button id="audio-toggle" type="button">Odtwórz</button>
+          <button id="next-track" type="button" aria-label="Następny utwór">Dalej</button>
+        </div>
+        <div class="timeline">
+          <span id="current-time">0:00</span>
+          <input id="seek-bar" type="range" min="0" max="1000" value="0" aria-label="Przewiń utwór" />
+          <span id="duration">0:00</span>
+        </div>
       </div>
       <canvas id="webgl-canvas" aria-label="Kosmiczna wizualizacja audio"></canvas>
     </main>

@@ -39,15 +39,65 @@ body {
   color: rgba(245, 241, 232, 0.74);
 }
 
-.controls {
+.player {
   position: fixed;
   top: 20px;
   right: 20px;
   z-index: 4;
+  width: min(360px, calc(100vw - 40px));
+  padding: 14px;
+  border: 1px solid rgba(245, 241, 232, 0.18);
+  border-radius: 8px;
+  background: rgba(8, 10, 20, 0.58);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(18px);
 }
 
-.controls button {
-  min-width: 92px;
+.track-info {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.track-kicker {
+  font-size: 11px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: rgba(245, 241, 232, 0.54);
+}
+
+.track-info strong {
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#track-select {
+  width: 100%;
+  min-height: 40px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(245, 241, 232, 0.22);
+  border-radius: 8px;
+  background: rgba(245, 241, 232, 0.1);
+  color: #f5f1e8;
+  font: inherit;
+  font-size: 14px;
+}
+
+#track-select option {
+  color: #101114;
+}
+
+.transport {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 1fr;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.player button {
   min-height: 42px;
   border: 1px solid rgba(245, 241, 232, 0.28);
   border-radius: 8px;
@@ -56,15 +106,47 @@ body {
   font: inherit;
   font-size: 15px;
   cursor: pointer;
-  backdrop-filter: blur(16px);
 }
 
-.controls button:hover {
+.player button:hover {
   background: rgba(245, 241, 232, 0.17);
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: 42px 1fr 42px;
+  gap: 10px;
+  align-items: center;
+  color: rgba(245, 241, 232, 0.74);
+  font-size: 12px;
+}
+
+#duration {
+  text-align: right;
+}
+
+#seek-bar {
+  width: 100%;
+  accent-color: #4cc9f0;
+  cursor: pointer;
 }
 
 #webgl-canvas {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 680px) {
+  .label {
+    top: 18px;
+    left: 18px;
+  }
+
+  .player {
+    top: auto;
+    right: 14px;
+    bottom: 14px;
+    width: calc(100vw - 28px);
+  }
 }
